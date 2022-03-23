@@ -1,8 +1,73 @@
-[![CI](https://github.com/lifinance/lifi-contracts/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/lifinance/lifi-contracts/actions/workflows/main.yml)
+# ✨ So you want to sponsor a contest
+
+This `README.md` contains a set of checklists for our contest collaboration.
+
+Your contest will use two repos:
+
+- **a _contest_ repo** (this one), which is used for scoping your contest and for providing information to contestants (wardens)
+- **a _findings_ repo**, where issues are submitted.
+
+Ultimately, when we launch the contest, this contest repo will be made public and will contain the smart contracts to be reviewed and all the information needed for contest participants. The findings repo will be made public after the contest is over and your team has mitigated the identified issues.
+
+Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the contest sponsor (⭐️)**.
+
+---
+
+## ⭐️ Sponsor: Provide contest details
+
+Under "SPONSORS ADD INFO HERE" heading below, include the following:
+
+- [ ] Name of each contract and:
+  - [ ] source lines of code (excluding blank lines and comments) in each
+  - [ ] external contracts called in each
+  - [ ] libraries used in each
+- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
+- [ ] Does the token conform to the ERC-20 standard? In what specific ways does it differ?
+- [ ] Describe anything else that adds any special logic that makes your approach unique
+- [ ] Identify any areas of specific concern in reviewing the code
+- [ ] Add all of the code to this repo that you want reviewed
+- [ ] Create a PR to this repo with the above changes.
+
+---
+
+# Contest prep
+
+## 🐺 C4: Contest prep
+
+- [ ] Move any relevant information in "contest scope information" above to the bottom of this readme.
+- [ ] Delete this checklist.
+
+## ⭐️ Sponsor: Contest prep
+
+- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
+- [ ] Modify the bottom of this `README.md` file to describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2021-06-gro/blob/main/README.md))
+- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 8 hours prior to contest start time.**
+- [ ] Ensure that you have access to the _findings_ repo where issues will be submitted.
+- [ ] Promote the contest on Twitter (optional: tag in relevant protocols, etc.)
+- [ ] Share it with your own communities (blog, Discord, Telegram, email newsletters, etc.)
+- [ ] Optional: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
+- [ ] Delete this checklist and all text above the line below when you're ready.
+
+---
+
+# Li.Finance contest details
+
+- $71,250 USDC main award pot
+- $3,750 USDC gas optimization award pot
+- Join [C4 Discord](https://discord.gg/code4rena) to register
+- Submit findings [using the C4 form](https://code4rena.com/contests/2022-03-Li.finance-contest/submit)
+- [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
+- Starts March 24, 2022 00:00 UTC
+- Ends March 30, 2022 23:59 UTC
+
+This repo will be made public before the start of the contest. (C4 delete this line when made public)
+
+[ ⭐️ SPONSORS ADD INFO HERE ]
 
 # LI.FI Smart Contracts
 
 ## Table of contents
+
 1. [General](#general)
 2. [Why LI.FI?](#why)
    1. [Our Thesis](#thesis)
@@ -31,13 +96,15 @@ Then, we use the thresholds and preferences of our integration partners and end-
 ## Why LI.FI?<a name="why"></a>
 
 ### Our Thesis<a name="thesis"></a>
-* The future is multi-chain
-* Cross-chain bridging solutions will play a major role on infrastructure level
-* Aggregation will pave the way for mass adoption
+
+- The future is multi-chain
+- Cross-chain bridging solutions will play a major role on infrastructure level
+- Aggregation will pave the way for mass adoption
 
 ---
 
 ### Ecosystem Problems<a name="ecosystem-problems"></a>
+
 **dApps**: Many users come across a new interesting dApp on a chain they don't have funds in and struggle to get their funds there. This is significant friction in user onboarding as they have to research and find bridges to that chain to start using the dApp.
 
 **Yield Aggregators**: There are definitely protocols with better yield on new L2/side-chains but there isn't a secure, reliable way to transfer your funds.
@@ -49,6 +116,7 @@ Then, we use the thresholds and preferences of our integration partners and end-
 ---
 
 ### Developer Problems<a name="developer-problems"></a>
+
 **Too many bridges** to educate yourself about.
 It'd be good to have access to all of them and getting good guidance from people and algorithms that are specialized.
 
@@ -67,6 +135,7 @@ You also need DEXes/DEX aggregators as bridges are limited to stable-coins and n
 ---
 
 ### Solution<a name="solution"></a>
+
 A data mesh of cross-chain liquidity sources: cross-chain liquidity networks, bridges, DEXes, bridges, and lending protocols.
 
 As a bridge and DEX aggregator, Li.Fi can route any asset on any chain to the desired asset on the desired chain, thus providing a remarkable UX to their users.
@@ -75,6 +144,7 @@ All of this will be made available on an API/Contract level which comes as SDK, 
 No need for users to leave your dApps anymore.
 
 ## How It Works<a name="how-it-works"></a>
+
 Our [API](https://apidocs.li.finance/) and [SDK](https://docs.li.finance/official-documentation/integrate-li.fi-natively/li.fi-sdk) allow dApps and dApp developers to request the best routes for a desired cross-chain swap.
 Our backend will calculate the best possible routes based on the transaction fees, gas costs and execution duration.
 
@@ -172,8 +242,9 @@ yarn test
 ```
 
 ## More Information<a name="more-information"></a>
-* [Website](https://li.fi/)
-* [General Documentation](https://docs.li.finance/)
-* [API Documentation](https://apidocs.li.finance/)
-* [SDK Documentation](https://docs.li.finance/official-documentation/integrate-li.fi-natively/li.fi-sdk)
-* [Transfer UI](https://transferto.xyz/)
+
+- [Website](https://li.fi/)
+- [General Documentation](https://docs.li.finance/)
+- [API Documentation](https://apidocs.li.finance/)
+- [SDK Documentation](https://docs.li.finance/official-documentation/integrate-li.fi-natively/li.fi-sdk)
+- [Transfer UI](https://transferto.xyz/)
