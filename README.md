@@ -1,4 +1,4 @@
-# Li.Finance contest details
+# LI.FI contest details
 
 - $71,250 USDC main award pot
 - $3,750 USDC gas optimization award pot
