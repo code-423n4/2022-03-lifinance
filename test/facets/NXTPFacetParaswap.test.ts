@@ -1,4 +1,4 @@
-import { DexManagerFacet, ERC20__factory, NXTPFacet } from '../../typechain'
+import { DexManagerFacet, IERC20__factory, NXTPFacet } from '../../typechain'
 import { expect } from '../chai-setup'
 import { deployments, network } from 'hardhat'
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signers'
@@ -112,7 +112,7 @@ describe('NXTPFacet (Paraswap)', function () {
     nxtpData.invariantData.initiator = lifi.address
 
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(USDC_ADDRESS, alice)
+    const token = IERC20__factory.connect(USDC_ADDRESS, alice)
     await token.approve(lifi.address, lifiData.amount)
 
     // Call LiFi smart contract to start the bridge process

@@ -3,7 +3,7 @@ import { constants, Contract, utils } from 'ethers'
 import { deployments, network } from 'hardhat'
 import {
   DexManagerFacet,
-  ERC20__factory,
+  IERC20__factory,
   GenericSwapFacet,
 } from '../../typechain'
 import { node_url } from '../../utils/network'
@@ -108,10 +108,10 @@ describe('Generic Swap Facet', async () => {
     )
 
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(USDC_ADDRESS, bob)
+    const token = IERC20__factory.connect(USDC_ADDRESS, bob)
     await token.approve(lifi.address, amountIn)
 
-    const postToken = ERC20__factory.connect(hUSDC_ADDRESS, bob)
+    const postToken = IERC20__factory.connect(hUSDC_ADDRESS, bob)
 
     const preBalance = await postToken.balanceOf(bob.address)
 
@@ -165,7 +165,7 @@ describe('Generic Swap Facet', async () => {
     )
 
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(USDC_ADDRESS, bob)
+    const token = IERC20__factory.connect(USDC_ADDRESS, bob)
     await token.approve(lifi.address, amountIn)
 
     await expect(

@@ -2,8 +2,8 @@
 import {
   AnyswapFacet,
   DexManagerFacet,
-  ERC20,
-  ERC20__factory,
+  IERC20,
+  IERC20__factory,
 } from '../../typechain'
 import { deployments, network } from 'hardhat'
 import { constants, utils } from 'ethers'
@@ -27,9 +27,9 @@ describe('AnyswapFacet', function () {
   let alice: SignerWithAddress
   let beefHolder: SignerWithAddress
   let lifiData: any
-  let token: ERC20
-  let usdt: ERC20
-  let wmatic: ERC20
+  let token: IERC20
+  let usdt: IERC20
+  let wmatic: IERC20
 
   const setupTest = deployments.createFixture(
     async ({ deployments, ethers }) => {
@@ -61,9 +61,9 @@ describe('AnyswapFacet', function () {
         '0xf71b335a1d9449c381d867f4172fc1bb3d2bfb7b'
       )
 
-      wmatic = ERC20__factory.connect(WMATIC_ADDRESS, alice)
+      wmatic = IERC20__factory.connect(WMATIC_ADDRESS, alice)
 
-      usdt = ERC20__factory.connect(USDT_ADDRESS, alice)
+      usdt = IERC20__factory.connect(USDT_ADDRESS, alice)
       lifiData = {
         transactionId: utils.randomBytes(32),
         integrator: 'ACME Devs',
@@ -74,7 +74,7 @@ describe('AnyswapFacet', function () {
         destinationChainId: 100,
         amount: utils.parseUnits('1000', 6),
       }
-      token = ERC20__factory.connect(anyUSDT_ADDRESS, alice)
+      token = IERC20__factory.connect(anyUSDT_ADDRESS, alice)
       await usdt.approve(lifi.address, utils.parseUnits('1000', 6))
     }
   )
@@ -116,7 +116,7 @@ describe('AnyswapFacet', function () {
   })
 
   it('starts a bridge transaction using anyToken implementation on the sending chain', async () => {
-    const beefy = ERC20__factory.connect(BEEFY_ADDRESS, beefHolder)
+    const beefy = IERC20__factory.connect(BEEFY_ADDRESS, beefHolder)
     await beefy.approve(lifi.address, utils.parseEther('10'))
 
     const AnyswapData = {

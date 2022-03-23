@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { DexManagerFacet, ERC20__factory, NXTPFacet } from '../../typechain'
+import { DexManagerFacet, IERC20__factory, NXTPFacet } from '../../typechain'
 import { expect } from '../chai-setup'
 import { deployments, network } from 'hardhat'
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signers'
@@ -77,7 +77,7 @@ describe('NXTPFacet', function () {
 
   it('starts a bridge transaction on the sending chain', async function () {
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(RINKEBY_TOKEN_ADDRESS, alice)
+    const token = IERC20__factory.connect(RINKEBY_TOKEN_ADDRESS, alice)
     await token.approve(lifi.address, simpleNXTPData.amount)
 
     const nxtpData = {
@@ -131,7 +131,7 @@ describe('NXTPFacet', function () {
     )
 
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(RINKEBY_DAI_ADDRESS, alice)
+    const token = IERC20__factory.connect(RINKEBY_DAI_ADDRESS, alice)
     await token.approve(lifi.address, amountIn)
 
     // Call LiFi smart contract to start the bridge process
@@ -195,7 +195,7 @@ describe('NXTPFacet', function () {
     )
 
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(RINKEBY_DAI_ADDRESS, alice)
+    const token = IERC20__factory.connect(RINKEBY_DAI_ADDRESS, alice)
     await token.approve(lifi.address, amountIn)
 
     // Call LiFi smart contract to start the bridge process
@@ -254,7 +254,7 @@ describe('NXTPFacet', function () {
     )
 
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(RINKEBY_DAI_ADDRESS, alice)
+    const token = IERC20__factory.connect(RINKEBY_DAI_ADDRESS, alice)
     await token.approve(lifi.address, amountIn)
 
     // Call LiFi smart contract to start the bridge process
@@ -316,7 +316,7 @@ describe('NXTPFacet', function () {
     )
 
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(RINKEBY_DAI_ADDRESS, alice)
+    const token = IERC20__factory.connect(RINKEBY_DAI_ADDRESS, alice)
     await token.approve(lifi.address, amountIn)
 
     // Call LiFi smart contract to start the bridge process

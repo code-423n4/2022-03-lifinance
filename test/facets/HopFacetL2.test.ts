@@ -1,4 +1,4 @@
-import { ERC20__factory, HopFacet } from '../../typechain'
+import { IERC20__factory, HopFacet } from '../../typechain'
 import { deployments, network } from 'hardhat'
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signers'
 import { constants, utils } from 'ethers'
@@ -126,7 +126,7 @@ describe('HopFacet L2', function () {
 
     const fee = await bridge.getTotalFee(amountIn, Chain.Polygon, Chain.Gnosis)
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(USDC_ADDRESS, bob)
+    const token = IERC20__factory.connect(USDC_ADDRESS, bob)
     await token.approve(lifi.address, amountIn)
 
     const HopData = {
@@ -221,7 +221,7 @@ describe('HopFacet L2', function () {
   //     )
 
   //   // Approve ERC20 for swapping
-  //   const token = ERC20__factory.connect(DAI_ADDRESS, bob)
+  //   const token = IERC20__factory.connect(DAI_ADDRESS, bob)
   //   await token.approve(lifi.address, amountIn)
 
   //   await expect(

@@ -1,4 +1,4 @@
-import { DexManagerFacet, ERC20__factory, HopFacet } from '../../typechain'
+import { DexManagerFacet, IERC20__factory, HopFacet } from '../../typechain'
 // import { expect } from '../chai-setup'
 import { deployments, network } from 'hardhat'
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signers'
@@ -73,7 +73,7 @@ describe('HopFacet L1', function () {
 
   it('starts a bridge transaction on the sending chain', async function () {
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(USDC_ADDRESS, alice)
+    const token = IERC20__factory.connect(USDC_ADDRESS, alice)
     const amount = utils.parseUnits('10010', 6)
     const deadline = Math.floor(Date.now() / 1000) + 60 * 20 // 20 minutes from the current Unix time
 
@@ -162,7 +162,7 @@ describe('HopFacet L1', function () {
     ])
 
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(USDC_ADDRESS, alice)
+    const token = IERC20__factory.connect(USDC_ADDRESS, alice)
     await token.approve(lifi.address, amountIn)
 
     await expect(
@@ -228,7 +228,7 @@ describe('HopFacet L1', function () {
     ])
 
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(USDC_ADDRESS, alice)
+    const token = IERC20__factory.connect(USDC_ADDRESS, alice)
     await token.approve(lifi.address, amountIn)
 
     await expect(

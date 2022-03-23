@@ -1,4 +1,4 @@
-import { ERC20__factory, CBridgeFacet, DexManagerFacet } from '../../typechain'
+import { IERC20__factory, CBridgeFacet, DexManagerFacet } from '../../typechain'
 // import { expect } from '../chai-setup'
 import { deployments, network } from 'hardhat'
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signers'
@@ -98,7 +98,7 @@ describe('CBridgeFacet', function () {
   })
   it('starts a bridge transaction on the sending chain', async function () {
     // Approve ERC20 for swapping
-    const token = await ERC20__factory.connect(DAI_ADDRESS, alice)
+    const token = await IERC20__factory.connect(DAI_ADDRESS, alice)
     await token.approve(lifi.address, utils.parseUnits('100000', 10))
 
     await expect(
@@ -145,7 +145,7 @@ describe('CBridgeFacet', function () {
     }
 
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(USDC_ADDRESS, alice)
+    const token = IERC20__factory.connect(USDC_ADDRESS, alice)
     await token.approve(lifi.address, amountIn)
 
     await expect(
@@ -208,7 +208,7 @@ describe('CBridgeFacet', function () {
     }
 
     // Approve ERC20 for swapping
-    const token = ERC20__factory.connect(USDC_ADDRESS, alice)
+    const token = IERC20__factory.connect(USDC_ADDRESS, alice)
     await token.approve(lifi.address, amountIn)
 
     await expect(
