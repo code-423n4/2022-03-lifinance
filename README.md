@@ -105,8 +105,6 @@ The following risks should be given special consideration during the audit:
 
 We are planning to to improve the LibSwap libraries to not only check the exchange calls using a contract address whitelist, but also use a function signature whitelist to ensure that only known functions are called in those contracts.
 
-[![CI](https://github.com/lifinance/lifi-contracts/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/lifinance/lifi-contracts/actions/workflows/main.yml)
-
 # LI.FI Smart Contracts
 
 ## Table of contents
