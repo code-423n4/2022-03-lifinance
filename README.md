@@ -187,7 +187,6 @@ contracts
 ├─── deploy                   // deployment scripts
 ├─── diamondABI               // Diamond ABI definition
 ├─── export                   // deployed results
-├─── scripts                  // scripts containing sample calls for demonstration
 │
 ├─── src                      // the contract code
 │   ├── Facets                // service facets
