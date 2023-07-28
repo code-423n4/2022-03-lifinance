@@ -1,0 +1,242 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q1-2022 / ☑lifi-mar24
+==============================================================
+
+[03/23/2022 3:24 PM] itsmetechjay
+👋 Hello and welcome to the contest channel for the $75K USDC **LI.FI** contest!
+
+📆 Contest opens March 24, 2022, at 0:00 UTC and runs through March 30, 2022 at 23:59 UTC (7 days).
+
+Please give a warm welcome to the LI.FI team, particularly @edzynda.eth, who will be available for questions either here in the channel or via DM. 
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-03-lifi-contest
+
+{Embed}
+https://code4rena.com/contests/2022-03-lifi-contest
+Code4rena LI.FI contest
+$75,000 USDC
+24 March 2022—30 March 2022
+Code4rena - ARCHIVE-Q1-2022 - ☑lifi-mar24 [956210526801788978].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+🎉 (14) 🍴 (6) 🥳 (5) 🙏 (7) ❤️‍🔥 (5) 
+
+[03/24/2022 11:56 AM] itsmetechjay
+@🐺wardens We needed to update the naming of the LI.FI repo URLs as it was causing an issue with our findings form.  
+
+The new repo link to view code and documentation is: https://github.com/code-423n4/2022-03-lifinance
+
+{Embed}
+https://github.com/code-423n4/2022-03-lifinance
+GitHub - code-423n4/2022-03-lifinance
+Contribute to code-423n4/2022-03-lifinance development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q1-2022 - ☑lifi-mar24 [956210526801788978].txt_Files/b5d3abd4-7596-4809-a7d0-b59e12fa960f-7483B
+
+
+[03/24/2022 10:47 PM] samruna
+Not able to submit bug, not sure if it's code4rena issue , please check
+
+
+[03/24/2022 10:58 PM] captainmangoc4
+I sent you a DM
+
+
+[03/24/2022 11:23 PM] samruna
+Never mind was able to submit now
+
+{Reactions}
+🎉 (3) 
+
+[03/25/2022 12:25 AM] _t1nt1n
+Anyone else having issues running the tests locally? Getting an issue related to the mainnet forking: `Error: Trying to initialize a provider with block 25689963 but the current block is 1445218`
+
+
+[03/25/2022 12:29 AM] _t1nt1n
+jk, got it
+
+
+[03/25/2022 11:43 AM] aga7hokakological
+some transactions are passing but I am too getting same kind of error any help
+
+
+[03/25/2022 11:49 AM] max_lifi
+The polygon RPCs are not very stable which sometimes makes it hard for hardhat to load the required state. We are forking the chain in the tests because we need a valid state of the bridges we are calling. It may help to execute only single tests or remove the `--bail`  flag from the test command to not stop as soon as one test fails.
+
+
+[03/25/2022 11:56 AM] caventa
+I face a lot of problems when running yarn run test. I would advise there are more documentation written on how to fix the problem
+
+
+[03/25/2022 12:18 PM] _t1nt1n
+I'm using alchemy for all three rpc urls (mainent, rinkeby, polygon) if that helps
+
+
+[03/25/2022 12:18 PM] _t1nt1n
+@caventa ^ maybe this will help you too
+
+
+[03/25/2022 12:27 PM] caventa
+Can I see your env file?
+
+
+[03/25/2022 12:28 PM] _t1nt1n
+No as it has my private keys lol
+
+{Reactions}
+🤣 (2) 
+
+[03/25/2022 12:30 PM] _t1nt1n
+here i scrubbed it
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2022 - ☑lifi-mar24 [956210526801788978].txt_Files/Screen_Shot_2022-03-25_at_8.29.52_AM-268A7.png
+
+
+[03/25/2022 12:41 PM] caventa
+Ok many thanks
+
+
+[03/25/2022 12:45 PM] aga7hokakological
+Thanks it worked
+
+{Reactions}
+👊 👍 
+
+[03/28/2022 12:42 PM] dimitri01#5993
+Hi, I am confused by this in the README 
+> We are planning to to improve the LibSwap libraries to not only check the exchange calls using a contract address whitelist, but also use a function signature whitelist to ensure that only known functions are called in those contracts.
+does this mean we should not submit exploits related to this?
+
+
+[03/28/2022 12:47 PM] max_lifi
+Please feel free to submit related exploits, we want to verify that this addition would really help and is needed.
+
+{Reactions}
+👍 (2) 
+
+[03/28/2022 6:58 PM] pedroais
+hey
+
+
+[03/28/2022 6:58 PM] pedroais
+https://docs.li.finance/
+
+{Embed}
+https://docs.li.finance/
+What is LI.FI?
+Code4rena - ARCHIVE-Q1-2022 - ☑lifi-mar24 [956210526801788978].txt_Files/f8wrmfL9sMgx2g3g358V-BFF60.png
+
+
+[03/28/2022 6:59 PM] pedroais
+this link isn't loading for me
+
+
+[03/28/2022 6:59 PM] pedroais
+I'm I the only one ?
+
+
+[03/28/2022 7:01 PM] itsmetechjay
+It redirects to this for me if that helps @Pedroais : https://docs.li.finance/official-documentation/
+
+{Embed}
+https://docs.li.finance/official-documentation/
+What is LI.FI?
+Code4rena - ARCHIVE-Q1-2022 - ☑lifi-mar24 [956210526801788978].txt_Files/f8wrmfL9sMgx2g3g358V-BFF60.png
+
+
+[03/28/2022 7:01 PM] pedroais
+Nope doesn't work for me either
+
+
+[03/28/2022 7:01 PM] pedroais
+Guess it's my problem
+
+
+[03/28/2022 7:01 PM] pedroais
+Thanks
+
+
+[03/28/2022 7:03 PM] pedroais
+It's weird I can load the li.fi site but not the documentation
+
+
+[03/28/2022 7:21 PM] max_lifi
+Works for me as well.
+
+
+[03/29/2022 4:17 PM] pedroais
+Hey where can I find documentation for the anyswap router ?
+
+
+[03/29/2022 4:22 PM] max_lifi
+The anyswap (multichain) documentation is pretty limited. You can find some info in their docs which also links to their github:
+https://docs.multichain.org/developer-guide/how-to-integrate-front-end-router
+
+{Embed}
+https://docs.multichain.org/developer-guide/how-to-integrate-front-end-router
+How to Integrate Front-end Router
+Code4rena - ARCHIVE-Q1-2022 - ☑lifi-mar24 [956210526801788978].txt_Files/Udcg2zIVro9DItOfrezt-8689F.png
+
+
+[03/29/2022 4:23 PM] pedroais
+Thanks
+
+
+[03/29/2022 4:24 PM] pedroais
+There's nothing there about the functions
+
+
+[03/29/2022 4:24 PM] pedroais
+So if i want to know what anySwapOutNative does for example I guess I need to read the code on etherscan ?
+
+
+[03/29/2022 4:24 PM] pedroais
+How did you do this ?
+
+
+[03/29/2022 4:35 PM] max_lifi
+We are in contact with the developers of all the bridges we integrate and get direct support from them. And for sure we also check their UI interfaces and how they interact with their contracts and the contracts themself.
+
+
+[03/29/2022 4:36 PM] pedroais
+Okay, thank you
+
+
+[03/31/2022 12:02 AM] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **LI.FI** contest is now closed! Huge thanks to everyone who participated🔍, whether you submitted a finding or not.
+
+What's next: the LI.FI team will review the findings over the next couple of days, and then we'll pass them off to the judge. Keep an eye on 📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+
+[04/29/2022 2:59 AM] tchkvsky
+Any update on payouts??
+
+
+[04/29/2022 2:15 PM] itsmetechjay
+It'll be sent in our next batch of awards which'll probably happen sometime next week.
+
+
+[04/29/2022 4:11 PM] tchkvsky
+Ok. Thanks
+
+{Reactions}
+👍 
+
+[05/12/2022 3:40 PM] tchkvsky
+Any update on this?? @Jay | C4
+
+
+[05/12/2022 4:53 PM] cloudellie
+Stay tuned for an update later today or first thing tomorrow. Sorry this has been slow!
+
+{Reactions}
+👍 
+
+==============================================================
+Exported 43 message(s)
+==============================================================
